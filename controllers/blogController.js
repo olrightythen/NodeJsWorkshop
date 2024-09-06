@@ -42,7 +42,9 @@ exports.createBlog = async (req, res) => {
       description,
       image,
     });
-    res.send("Blog created successfully");
+    res.send(
+      "<h1>Blog created successfully!</h1> <a href='/'>Go back to the homepage</a>"
+    );
   } catch (error) {
     res.status(500).send("Error creating blog");
   }
@@ -56,7 +58,9 @@ exports.renderEditBlog = async (req, res) => {
     if (blog) {
       res.render("layout", { title: "Edit blogs", body: "edit", blog });
     } else {
-      res.status(404).send("Blog not found");
+      res
+        .status(404)
+        .send("<h1>404 Not Found</h1><a href='/'>Go back to the homepage</a>");
     }
   } catch (error) {
     res.status(500).send("Server error");
