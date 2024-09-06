@@ -1,0 +1,12 @@
+<div class="blog-container">
+  <img src="/uploads/<%= blog.image %>" alt="Blog Image" class="blog-image" />
+  <h2><%= blog.title %></h2>
+  <h4><%= blog.subtitle %></h4>
+  <p><%= blog.description %></p>
+  <div class="buttons">
+    <a href="/blogs/<%= blog.id %>/edit" class="btn btn-edit">Edit</a>
+    <form action="/blogs/<%= blog.id %>/delete" method="POST">
+      <button type="submit" class="btn btn-delete">Delete</button>
+    </form>
+  </div>
+</div>

@@ -4,7 +4,7 @@ const MakeBlogModel = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
+
     subtitle: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,7 +16,7 @@ const MakeBlogModel = (sequelize, DataTypes) => {
     },
 
     image: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
   });
 };

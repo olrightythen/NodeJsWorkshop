@@ -1,48 +1,27 @@
 require("dotenv").config();
 const express = require("express");
-const { blogs } = require("./modules/index");
+const blogRoutes = require("./routes/blogRoutes");
+const authRoutes = require("./routes/authRoutes");
+
 const app = express();
 const port = 3000;
 
 // app.use(express.json()); --> This is for parsing JSON data from the frontend
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-require("./modules/index");
+app.use("/uploads", express.static("uploads"));
+require("./models/index");
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  const data = { name: "John", age: 30, city: "New York" };
-  res.render("index", { title: "Home", data: data });
-});
-
-// app.get("/blogs", (req, res) => {
-//   res.render("blogs", { title: "Blogs" });
-// });
-
-app.get("/create", (req, res) => {
-  res.render("create", { title: "Create a new blog" });
-});
+app.use("/", blogRoutes);
+app.use("/", authRoutes);
 
 app.get("/about", (req, res) => {
-  res.render("about", { title: "About" });
+  res.render("layout", { title: "About", body: "about" });
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact", { title: "Contact" });
-});
-
-app.post("/create", async (req, res) => {
-  const { title, subtitle, description } = req.body;
-  console.log(req.body);
-  await blogs
-    .create({
-      title: title,
-      subtitle: subtitle,
-      description: description,
-    })
-    .then((result) => {
-      res.send("Blog created successfully");
-    });
+  res.render("layout", { title: "Contact", body: "contact" });
 });
 
 app.listen(port, () => {

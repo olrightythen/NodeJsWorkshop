@@ -16,7 +16,6 @@ footer {
   color: white;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
   bottom: 0;
   width: 100%;
   margin-top: 20px;
@@ -24,7 +23,7 @@ footer {
 
 .container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -52,6 +51,11 @@ footer {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
 }
 
 .form-group textarea {
