@@ -24,6 +24,13 @@ app.get("/contact", (req, res) => {
   res.render("layout", { title: "Contact", body: "contact" });
 });
 
+app.post("/contact", (req, res) => {
+  console.log(req.body);
+  res.send(
+    "<h1>Thanks for submitting the form!</h1><a href='/'>Go back to the homepage</a>"
+  );
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

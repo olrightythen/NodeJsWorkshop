@@ -9,9 +9,12 @@ body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
   color: white;
-  padding: 10px 0;
+  padding: 0 10px;
   text-align: center;
 }
 
@@ -42,6 +45,7 @@ nav ul li a {
   letter-spacing: 0.5px;
   text-decoration: none;
   font-size: 1.1rem;
+  font-weight: bold;
   padding: 5px 10px;
 }
 
@@ -64,6 +68,20 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
 .container {
   display: flex;
   max-width: 1200px;
@@ -84,6 +102,7 @@ nav ul li a:hover::after {
 
 .center {
   text-align: center;
+  margin: 20px 0;
 }
 
 /* Styles for the home page */
@@ -151,8 +170,7 @@ nav ul li a:hover::after {
 }
 
 .form-group textarea {
-  height: 100px;
-  resize: none;
+  resize: vertical;
 }
 
 .form-group button {
@@ -213,10 +231,28 @@ h4 {
   border-radius: 5px;
 }
 
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-create {
+  background-color: #2196f3;
+  display: inline-block;
+}
+
 .btn-edit {
   background-color: #4caf50;
 }
 
 .btn-delete {
   background-color: #f44336;
+}
+
+.info-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

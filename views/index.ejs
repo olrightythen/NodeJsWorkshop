@@ -1,5 +1,10 @@
+<% if (blogs.length === 0) { %>
+<div class="center">
+  <h2>No blogs found!</h2>
+  <a href="/create" class="btn btn-create">Create a new blog</a>
+</div>
+<% } else { %> <% blogs.forEach(function(blog) { %>
 <div class="container">
-  <% blogs.forEach(function(blog) { %>
   <div class="card">
     <img src="uploads/<%= blog.image %>" alt="<%= blog.title %>" />
     <div class="card-content">
@@ -8,5 +13,5 @@
       <a href="/blogs/<%= blog.id %>">Read More</a>
     </div>
   </div>
-  <% }); %>
+  <% }); %> <% } %>
 </div>
